@@ -2,16 +2,16 @@
     "@context": [
         "https://raw.githubusercontent.com/ReproNim/reproschema/1.0.0-rc4/contexts/generic",
         {
-            "activity_path": "https://raw.githubusercontent.com/ReproNim/reproschema-library/c5fc804ae394806ab8051942a89b3bcc6c3312ac/activities/"
+            "activity_path": "https://raw.githubusercontent.com/danielmlow/reproschema-library/b753eba8f78a160705edd2afd44d0c1b3d36ec72/activities/"
         }
     ],
     "@type": "reproschema:Protocol",
     "@id": "WellBeing_schema",
     "prefLabel": {
-        "en": "Well Being Protocol",
-        "es": "Protocolo de voz para Covid19"
+        "en": "Wellness Challenge",
+        "es": "Desafío para el bienestar"
     },
-    "description": "Well Being Protocol",
+    "description": "Wellness Challenge",
     "schemaVersion": "1.0.0-rc4",
     "version": "0.0.1",
     "landingPage": {
@@ -20,14 +20,24 @@
     },
     "ui": {
         "order": [
+            "../activities/audio_check/audio_check_schema",
             "../activities/demographics_and_background/demographics_and_background_schema",
-            "../activities/receiving_responses/receiving_responses_schema",
+            "../activities/mental_health/mental_health_schema",
+            "../activities/wellbeing/wellbeing_schema",
             "../activities/voice_tasks/voice_tasks_schema",
             "../activities/writing_tasks/writing_tasks_schema",
+            "../activities/feedback/feedback_schema",
             "activity_path:ThankYou/ThankYou_schema"
         ],
         "shuffle": false,
         "addProperties": [
+                        {
+                "isAbout": "../activities/audio_check/audio_check_schema",
+                "variableName": "audio_check",
+                "prefLabel": {
+                    "en": "Audio Check"
+                }
+            },
             {
                 "isAbout": "../activities/demographics_and_background/demographics_and_background_schema",
                 "variableName": "demographics_and_background_schema",
@@ -36,10 +46,17 @@
                 }
             },
             {
-                "isAbout": "../activities/receiving_responses/receiving_responses_schema",
-                "variableName": "receiving_responses_schema",
+                "isAbout": "../activities/mental_health/mental_health_schema",
+                "variableName": "Mental health",
                 "prefLabel": {
-                    "en": "Receiving Responses"
+                    "en": "Mental Health"
+                }
+            },
+            {
+                "isAbout": "../activities/wellbeing/wellbeing_schema",
+                "variableName": "wellbeing_schema",
+                "prefLabel": {
+                    "en": "Well-being"
                 }
             },
             {
@@ -54,6 +71,13 @@
                 "variableName": "writing_tasks_schema",
                 "prefLabel": {
                     "en": "Writing Tasks"
+                }
+            },
+            {
+                "isAbout": "../activities/feedback/feedback_schema",
+                "variableName": "feedback_schema",
+                "prefLabel": {
+                    "en": "Feedback"
                 }
             },
             {
